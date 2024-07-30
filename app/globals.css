@@ -1,33 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+:root{
+ overflow-x: hidden;
+ 
+}
+body{
+  scrollbar-width: 0;
+
+  scrollbar-color: red;
+}
+.link_nav{
+@apply relative  hover:after:absolute after:bottom-0 after:left-4   md:after:h-[2px] after:inset-8 hover:after:bg-black 
+}
+/* li:has(.link_nav){
+  @apply md:h-full md:flex mditems-center
+} */
+.link_nav:hover::after{
+  animation-name: grow;
+  animation-fill-mode:forwards;
+  animation-timing-function: ease;
+  animation-duration: 800ms;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.gallery{
+  @apply after:h-0 after:transition after:w-full  after:absolute after:top-0  after:bg-black after:rounded-2xl  duration-1000
+  
+}
+.gallery:hover:after{
+  animation-name: taller;
+  animation-fill-mode:forwards;
+  animation-timing-function: ease;
+  animation-duration: 800ms;
+}
+.gallery:hover > p {
+  animation-name: appearence;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 10;
+}
+
+ .services:hover > .dropdown-sevices{
+  display: flex;
+  flex-direction: column;
+  animation-name: appearence;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 10;
+ 
+ }
+ 
+ .dropdown-sevices a{
+  @apply py-2 px-4    
+ }
+ .dropdown-sevices a:hover {
+  scale: 1.1;
+
+  @apply bg-accent
+ }
+ .services:hover > .arrow{
+  animation-name: rotate;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 10;
+ }
+
+ .services:not(:hover) > .arrow {
+  animation-name: rotate-back;
+  animation-duration: 700ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  z-index: 10;
+ }
+ .rdv_form{
+  @apply  rounded-lg shadow-lg p-4 flex flex-col justify-center items-center gap-6
+ }
+.rdv_form input:not(.input-field-date){
+  @apply relative w-full after:h-3 after:block border-separate after:w-8 gap-20 px-3 py-2 border-none outline-none  md:w-1/2 rounded-lg   ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+ @keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(180deg);
+  } 
+ }
+
+ @keyframes rotate-back {
+  0%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  } 
+ }
+
+@keyframes grow {
+  0%{
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  100%{
+   width:100%;
+   left: 50%;
+   transform: translateX(-50%);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  @keyframes taller {
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    0%{
+      height: 0;
+      top: 50%;
+      opacity: 0;
+      transform: translateY(-50%);
+    }
+    
+    100%{
+     height:100%;
+     opacity: 0.7;
+     top: 50%;
+     transform: translateY(-50%);
+    }
+    
   }
-}
+
+  @keyframes appearence {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+    
+  }
+
+  @keyframes rotate {
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+      transform: rotate(180deg);
+    } 
+    
+     
+  }
+
+
+
+  .loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    color: black;
+  }
+    .loader:before,
+    .loader:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: inherit;
+      border-radius: 50%;
+      transform: rotateX(70deg);
+      animation: 1s spin linear infinite;
+    }
+    .loader:after {
+      color: #FF3D00;
+      transform: rotateY(70deg);
+      animation-delay: .4s;
+    }
+
+  /* @keyframes rotate {
+    0% {
+      transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+  } */
+
+  @keyframes rotateccw {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  @keyframes spin {
+    0%,
+    100% {
+      box-shadow: .2em 0px 0 0px currentcolor;
+    }
+    12% {
+      box-shadow: .2em .2em 0 0 currentcolor;
+    }
+    25% {
+      box-shadow: 0 .2em 0 0px currentcolor;
+    }
+    37% {
+      box-shadow: -.2em .2em 0 0 currentcolor;
+    }
+    50% {
+      box-shadow: -.2em 0 0 0 currentcolor;
+    }
+    62% {
+      box-shadow: -.2em -.2em 0 0 currentcolor;
+    }
+    75% {
+      box-shadow: 0px -.2em 0 0 currentcolor;
+    }
+    87% {
+      box-shadow: .2em -.2em 0 0 currentcolor;
+    }
+  }
+ 
+
+  
