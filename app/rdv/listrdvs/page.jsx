@@ -25,7 +25,7 @@ export default function ListRdvs() {
     <>
       <div className="container mx-auto p-4">
         <h1 className="text-5xl font-josefin mb-4 text-center">Bonjour Dr OUSSAMA!</h1>
-        <h2 className="text-3xl font-josefin mb-6">Voici votre liste des patients pour Aujourd'hui</h2>
+        <h2 className="text-3xl font-josefin mb-6">Voici votre liste des patients pour Aujourd&apos;hui</h2>
         <div className="overflow-x-auto">
                 <div className='flex  justify-between  items-center '>
                      <input placeholder='Recherche ' className='px-4 py-2 bg-muted rounded-xl  outline-none w-1/2'/>

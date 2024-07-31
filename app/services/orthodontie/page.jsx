@@ -11,7 +11,7 @@ export default function orthodontiePage(){
                             <p className='text-sm text-gray-600'>Des dents droites, bien alignées, et faciles à nettoyer : à nous de jouer !</p>
                             </h1>
                   
-                        <p className="text-2xl font-semibold font-josefin">L'orthodontie est une branche de la dentisterie spécialisée dans le diagnostic, la prévention et le traitement des anomalies dentaires et faciales. Elle vise à corriger les malpositions des dents et des mâchoires pour améliorer la fonction et l'apparence du sourire .</p>
+                        <p className="text-2xl font-semibold font-josefin">L&apos;orthodontie est une branche de la dentisterie spécialisée dans le diagnostic, la prévention et le traitement des anomalies dentaires et faciales. Elle vise à corriger les malpositions des dents et des mâchoires pour améliorer la fonction et l&apos;apparence du sourire .</p>
                         <p className='text-sm '>Il est recommandé de voir l&apos;orthodontiste pour la première fois autour de 6 ans. La consultation à cet âge permet entre autres de vérifier le nombre de dents, leur position ou de déceler des problèmes de mâchoires qui pourraient nécessiter un traitement précoce. </p>
                </div>
                <Image src={photo} alt="orthodontie" width={500} height={500} className='object-cover rounded-2xl'/>
