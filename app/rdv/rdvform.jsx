@@ -17,7 +17,7 @@ export default function RdvForm() {
     const inputFields = [
         { name: "nom", placeholder: "Nom", validation: { required: { value: true, message: "Le nom est obligatoire" }, pattern: { value: /^[A-Za-z]+$/i, message: "Le nom doit contenir que des lettres" } } },
         { name: "prenom", placeholder: "Prénom", validation: { required: { value: true, message: "Le prénom est obligatoire" } } },
-        { name: "email", placeholder: "Email", validation: { required: { value: true, message: "L&apos;email est obligatoire" }, pattern: { value: /^\S+@\S+$/i, message: "L'email n'est pas valide" } } },
+        { name: "email", placeholder: "Email", validation: { required: { value: true, message: "L'email est obligatoire" }, pattern: { value: /^\S+@\S+$/i, message: "L'email n'est pas valide" } } },
         { name: "telephone", placeholder: "Téléphone", validation: { required: { value: true, message: "Le téléphone est obligatoire" }, pattern: { value: /^[0-9]+$/, message: "Le téléphone doit contenir que des chiffres" } } },
     ];
     const onSubmit = async data => {
