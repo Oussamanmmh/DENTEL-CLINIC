@@ -11,7 +11,7 @@ export default function ContactForm (){
     const inputFields = [
         { name: "nom", placeholder: "Nom", validation: { required: { value: true, message: "Le nom est obligatoire" }, pattern: { value: /^[A-Za-z]+$/i, message: "Le nom doit contenir que des lettres" } } },
         { name: "prenom", placeholder: "Prénom", validation: { required: { value: true, message: "Le prénom est obligatoire" } } },
-        { name: "email", placeholder: "Email", validation: { required: { value: true, message: "L'email est obligatoire" }, pattern: { value: /^\S+@\S+$/i, message: "L'email n'est pas valide" } } },
+        { name: "email", placeholder: "Email", validation: { required: { value: true, message: "L&apos;email est obligatoire" }, pattern: { value: /^\S+@\S+$/i, message: "L&apos;email n&apos;est pas valide" } } },
     ]
     const onSubmit=  async(data)=>{
         try {

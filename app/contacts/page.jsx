@@ -30,7 +30,7 @@ export default function ContactPage(){
            <div className="text-center px-10 flex flex-col gap-10 py-10">
                     <div>
                         <h1 className="text-5xl font-josefin font-bold ">Contactez-nous.</h1>
-                        <h2 className="text-3xl text-gray-700 font-josefin font-semibold ">Si vous avez des questions, n'hésitez pas à les poser</h2>
+                        <h2 className="text-3xl text-gray-700 font-josefin font-semibold ">Si vous avez des questions, n&apos;hésitez pas à les poser</h2>
                     </div>
                 <div className="flex flex-col md:flex-row gap-20 justify-between"> 
                         <div className="flex flex-col gap-16 items-center  w-full">  

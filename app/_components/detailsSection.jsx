@@ -17,7 +17,7 @@ export default function DetailsPage(){
                      viewport={{margin:"-100px"}}
                      transition={{duration:0.5}}
 
-                 className="text-2xl text-center font-josefin font-semibold">Notre clinique est équipée d'installations modernes et puissantes, conçues pour offrir les meilleurs soins dentaires possibles.</motion.p>
+                 className="text-2xl text-center font-josefin font-semibold">Notre clinique est équipée d&apos;installations modernes et puissantes, conçues pour offrir les meilleurs soins dentaires possibles.</motion.p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white uppercase font-josefin">
                     <div className="relative gallery  ">
                         <Image src={clin1} alt="clinique" className="w-full h-96 object-cover rounded-2xl cursor-pointer after:content-['vootre']  " />
