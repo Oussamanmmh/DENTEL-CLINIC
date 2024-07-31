@@ -4,6 +4,7 @@ import logo from "../../public/assets/logo.png";
 import { useState } from "react";
 import me from "../../public/assets/me.jpg"
 import ServicesLink from "./serviceslink";
+import Link from "next/link";
 export default function NavBar() {
     const x = <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6"> <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" /> </svg>
 
@@ -13,16 +14,16 @@ export default function NavBar() {
  
     return(
         <>
-        <nav className="flex items-center justify-between pr-2 py-10  bg-muted md:bg-none md:backdrop-blur-xl max-h-44 sticky top-0 z-50 ">
-                <div className="flex items-center">
+        <nav className="flex items-center justify-between pr-2 py-4  bg-muted md:bg-none md:backdrop-blur-xl max-h-36 sticky top-0 z-50 shadow-xl ">
+                <Link className="flex items-center" href="/">
                      <Image src={logo} alt="logo" width={100} height={100} className="size-20" />
                       <div className="flex flex-col font-extrabold text-2xl font-serif">
                             <h1 >Dr</h1 >
                             <h2>Oussama</h2>
                       </div>
-                </div>
+                </Link>
                 <ul className="hidden md:flex gap-8 font-semibold max-h-44 items-center ">
-                     <li><a className="link_nav" href="/">Accueil</a></li>
+                     <li><Link className="link_nav" href="/">Accueil</Link></li>
                      <li><a className="link_nav" href="/propos_de_nous">A propos de nous </a></li>
                      <li className="cursor-pointer relative services h-52 flex items-center gap-2">
                         <a className="link_nav services cursor-pointer"  >
@@ -35,18 +36,18 @@ export default function NavBar() {
                                 </svg>
                         <ServicesLink/>
                         </li>
-                     <li><a className="link_nav" href="/contacts">Contactez nous</a></li>
-                     <li><a className="link_nav" href="/clients">Nos Clients</a></li>
+                     <li><Link className="link_nav" href="/contacts">Contactez nous</Link></li>
+                     <li><Link className="link_nav" href="/clients">Nos Clients</Link></li>
                      
                 </ul>
-                <a href="tel:0667895276 " className={`font-bold text-primary flex transition-all duration-700 text-center items-center gap-2 ${sidebarOpen ? "opacity-0": "opacity-100"}`}>
+                <Link href="tel:0667895276 " className={`font-bold text-primary flex transition-all duration-700 text-center items-center gap-2 ${sidebarOpen ? "opacity-0": "opacity-100"}`}>
                     <span>+213-6-67-89-52</span>
                     <span className="hidden md:block">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z" />
                         </svg>
                      </span>
-                </a>
+                </Link>
 
                 <button className="md:hidden" onClick={() => setSidebarOpen(!sidebarOpen)}>
                     {sidebarOpen ? (
@@ -72,30 +73,30 @@ export default function NavBar() {
                                                  <Image src={me} alt="me" width={100} height={100} className="w-16 h-16 object-cover rounded-full cursor-pointer" />
                                           </div>
                             <ul className="mt-5 px-2  space-y-10 gap-20">
-                                <li><a className="link_nav" href="/">Accueil</a></li>
-                                <li><a className="link_nav" href="/propos_de_nous">A propos de nous</a></li>
+                                <li><Link className="link_nav" href="/">Accueil</Link></li>
+                                <li><Link className="link_nav" href="/propos_de_nous">A propos de nous</Link></li>
                                 <li className="cursor-pointer flex flex-col gap-4  ">
                                     <a className="link_nav cursor-pointer flex items-center gap-20"onClick={()=>setVisibleDropdown(!visibleDropdown)} >
                                        <span>Services</span> 
                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4 ">
                                           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                        </svg>
-                                        </a>
+                                    </a>
                                     <div className={`  pl-4  flex flex-col  transition-all ease duration-1000 text-sm  overflow-hidden   text-start gap-4 ${visibleDropdown ? "max-h-screen" : "max-h-0 "}  `} >
-                                              <a href="services/orthodontie" >Orthodontie</a >
-                                              <a href="services/pedodontie" >Pédodontie</a >
-                                              <a href="servicec/chirurgie_buccale" >Chirurgie buccale</a>
-                                              <a href="services/implantologie" >Implantologie</a >
-                                              <a href="services/parodontologie" >Parodontologie</a >
-                                              <a href="services/esthetique_dentaire" >Esthétique dentaire</a >
-                                              <a href="services/soins_dentaire" >Soins dentaire</a >
-                                              <a href="services/microscope-operatoire">Micro Operatoire </a>
+                                              <Link href="/services/orthodontie" >Orthodontie</Link >
+                                              <Link href="/services/pedodontie" >Pédodontie</Link >
+                                              <Link href="/servicec/chirurgie_buccale" >Chirurgie buccale</Link>
+                                              <Link href="/services/implantologie" >Implantologie</Link >
+                                              <Link href="/services/parodontologie" >Parodontologie</Link >
+                                              <Link href="/services/esthetique_dentaire" >Esthétique dentaire</Link >
+                                              <Link href="/services/soins_dentaire" >Soins dentaire</Link >
+                                              <Link href="/services/microscope-operatoire">Micro Operatoire </Link>
                                         </div>
                                    
                                      
                                 </li>
-                                <li><a className="link_nav" href="/contacts">Contactez nous</a></li>
-                                <li><a className="link_nav" href="/clients">Nos Clients</a></li>
+                                <li><Link className="link_nav" href="/contacts">Contactez nous</Link></li>
+                                <li><Link className="link_nav" href="/clients">Nos Clients</Link></li>
                             </ul>
                         </div>
                         <div className="p-4">

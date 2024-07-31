@@ -5,6 +5,7 @@ import whats from "../../public/assets/whatsapp.png"
 import Image from "next/image"
 import ContactForm from "./contactForm"
 import Alert from "../_components/alert"
+import { Suspense } from "react"
 export default function ContactPage(){
     const contacts =[
         {
@@ -34,7 +35,9 @@ export default function ContactPage(){
                 <div className="flex flex-col md:flex-row gap-20 justify-between"> 
                         <div className="flex flex-col gap-16 items-center  w-full">  
                                 <h1 className="text-xl font-josefin">Vous pouvez nous trouver ici : </h1>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5390513.149520045!2d4.014700623264071!3d46.57819346124324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c64ef6f596d61%3A0x5c56b5110fcb7b15!2sSuisse!5e0!3m2!1sfr!2sdz!4v1722282329005!5m2!1sfr!2sdz"  className="rounded-2xl w-full md:w-full" width={600} height={300} style={{border:0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                              <Suspense fallback={<h1>loading</h1>}>
+                                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5390513.149520045!2d4.014700623264071!3d46.57819346124324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c64ef6f596d61%3A0x5c56b5110fcb7b15!2sSuisse!5e0!3m2!1sfr!2sdz!4v1722282329005!5m2!1sfr!2sdz"  className="rounded-2xl w-full md:w-full" width={600} height={300} style={{border:0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                              </Suspense> 
 
                         </div>
                         <div>

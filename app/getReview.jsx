@@ -24,7 +24,7 @@ export default async function getGoogleReview() {
             engine: "google_maps_reviews",
             place_id: "ChIJ51pdg9R6jEcRqb046okiAjM",
             hl: "fr",
-            api_key: "b2c94d2cedbe2f3f8ce9d45855294d6514a83c027708ac97cdec8d341d8ea001"
+            api_key: process.env.SERP_KEY
           }, (json) => {
             console.log(json["reviews"]);
             resolve(json["reviews"]);

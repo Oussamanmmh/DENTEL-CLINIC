@@ -2,6 +2,7 @@ import Image from "next/image";
 import facebook from "../../public/assets/facebook.png"
 import instagram from "../../public/assets/instagram.png"
 import linkedin from "../../public/assets/linkedin.png"
+import Link from "next/link";
 
 export default function Footer(){
     return(
@@ -34,10 +35,10 @@ export default function Footer(){
                 </div>
                 <div>
                 <ul className="gap-6 grid grid-cols-2 text-center">
-                                <li><a className="link_nav hover:after:bg-white" href="/">Accueil</a></li>
-                                <li><a className="link_nav hover:after:bg-white" href="/propos_de_nous">A propos de nous</a></li>
-                                <li><a className="link_nav hover:after:bg-white" href="/contacts">Contactez nous</a></li>
-                                <li><a className="link_nav hover:after:bg-white" href="/clients">Nos Clients</a></li>
+                                <li><Link className="link_nav hover:after:bg-white" href="/">Accueil</Link></li>
+                                <li><Link className="link_nav hover:after:bg-white" href="/propos_de_nous">A propos de nous</Link></li>
+                                <li><Link className="link_nav hover:after:bg-white" href="/contacts">Contactez nous</Link></li>
+                                <li><Link className="link_nav hover:after:bg-white" href="/clients">Nos Clients</Link></li>
                             </ul>
                 </div>
                 <div className="flex  gap-6">
